@@ -1,0 +1,40 @@
+name: Deploy Resume Site to S3
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::614467945613:role/update-resume
+          aws-region: us-east-1
+          role-session-name: GitHubActions-Deploy-${{ github.run_id }}
+
+      - name: Sync files to S3
+        run: |
+          aws s3 sync . s3://kevinawelsh.com \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "*.md" \
+            --exclude "README*"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E2HZR02MXVIKEO \
+            --paths "/*"
