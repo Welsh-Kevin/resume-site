@@ -2,7 +2,7 @@
    ================= CONFIG =================
    After deploying the Lambda (see lambda/ + the setup guide),
    paste its Function URL between the quotes below: */
-const AI_ENDPOINT = ""; /* e.g. "https://xxxx.lambda-url.us-east-1.on.aws/" */
+const AI_ENDPOINT = "https://o27ss6j2rhaf5367dfndjra5wa0rcvdq.lambda-url.us-east-1.on.aws/"; /* e.g. "https://xxxx.lambda-url.us-east-1.on.aws/" */
 /* ========================================== */
 
 document.body.insertAdjacentHTML("beforeend", `
