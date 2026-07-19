@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Kevin A. Welsh</title>
+<meta name="description" content="Field notes from Kevin Welsh: lessons learned, project updates, and the cert journey.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">kevin<span>@</span>welsh:<span>~</span>$</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="resume.html">Resume</a>
+      <button class="btn-ai btn" type="button">✦ Ask my AI</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap page-head">
+  <div class="kicker">// blog</div>
+  <h1>Field notes</h1>
+  <p class="page-sub">Lessons learned, project updates, and honest notes from the cert journey. Click a post to read it.</p>
+</div>
+
+<section>
+  <div class="wrap" id="posts"></div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Kevin A. Welsh · Hermitage, PA</div>
+    <div class="foot-links">
+      <a href="https://github.com/Welsh-Kevin" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/welsh-kevin" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ================= ADD BLOG POSTS HERE =================
+   Newest post goes at the TOP of the list.
+   Each post: date, title, summary (one line shown in the list),
+   and body (an array of paragraphs, each in quotes).
+   Write plain text. Push to publish.
+
+   Template to copy:
+   {
+     date: "Month 2026",
+     title: "Post title",
+     summary: "One line shown under the title.",
+     body: [
+       "First paragraph.",
+       "Second paragraph.",
+     ],
+   },
+*/
+
+const POSTS = [
+  {
+    date: "July 2026",
+    title: "Welcome to the new kevinawelsh.com",
+    summary: "The site got a full rebuild. Here's what changed and what's under the hood.",
+    body: [
+      "This site started as a single page hosting my resume for the Cloud Resume Challenge. It has grown into a full portfolio: projects, a roadmap recruiters can actually follow, this blog, and an AI assistant in the corner that runs on the same AWS and Bedrock stack I build with.",
+      "Under the hood, nothing exotic. Static files on S3 behind CloudFront, deployed by GitHub Actions with the cache invalidated on every push. The AI assistant is a small Lambda with preset questions, response caching, and hard cost caps. Simple, cheap, and every piece of it is mine to maintain.",
+    ],
+  },
+];
+/* ================= END EDITABLE SECTION ================= */
+
+document.getElementById("posts").innerHTML = POSTS.length ? POSTS.map(p => `
+  <details class="post">
+    <summary>
+      <div><div class="pt">${p.title}</div><div class="ps">${p.summary}</div></div>
+      <span class="pd">${p.date}</span>
+    </summary>
+    <div class="pbody">${p.body.map(t => `<p>${t}</p>`).join("")}</div>
+  </details>`).join("")
+  : '<div class="card" style="color:var(--muted)">First post coming soon.</div>';
+</script>
+<script src="site.js"></script>
+</body>
+</html>

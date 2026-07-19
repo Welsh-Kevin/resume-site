@@ -1,86 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin Welsh Resume</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kevin A. Welsh — Cloud Engineer</title>
+<meta name="description" content="Kevin Welsh is a Cloud Computing student and U.S. Air Force veteran building real systems on AWS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1><strong>Kevin A. Welsh</strong></h1>
 
-    <div class="contact-info">
-    <a href="https://www.linkedin.com/in/welsh-kevin">LinkedIn</a>
-    <span class="divider">|</span>
-    <a href="https://github.com/Welsh-Kevin">GitHub</a>
-    <span class="divider">|</span>
-    <span>Hermitage, Pennsylvania</span>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">kevin<span>@</span>welsh:<span>~</span>$</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="blog.html">Blog</a>
+      <a href="resume.html">Resume</a>
+      <button class="btn-ai btn" type="button">✦ Ask my AI</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero-wrap">
+  <div class="wrap hero">
+    <div class="hero-text">
+      <div class="kicker">// aspiring cloud engineer · u.s. air force veteran</div>
+      <h1>Kevin A. Welsh</h1>
+      <div class="role">I learn the cloud by <b>building real systems on AWS</b> in my own account.</div>
+      <p class="hero-sub">Studying Cloud Computing full time and keeping live systems running on AWS, including an autonomous AI market research platform that works while I sleep.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="projects.html">View Projects</a>
+        <a class="btn" href="https://github.com/Welsh-Kevin" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/welsh-kevin" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="resume.html">Resume</a>
+      </div>
+      <div class="badges">
+        <span class="badge"><b>✓</b> AWS Cloud Practitioner</span>
+        <span class="badge"><b class="pend">◌</b> AWS SAA · Sept 2026</span>
+        <span class="badge"><b class="pend">◌</b> AWS CloudOps · Nov 2026</span>
+      </div>
+    </div>
+    <img class="hero-photo" src="photo.jpg" alt="Kevin A. Welsh" onerror="this.style.display='none'">
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label">01. about me</div>
+    <h2>From flight lines to pipelines</h2>
+    <p class="lead">I'm a Cloud Computing student and U.S. Air Force veteran. I spent more than eight years supervising ground operations at one of the busiest aerial ports in the world, where checklists, accountability, and staying calm under pressure were simply part of the job. Now I'm bringing that same discipline to the cloud. On top of studying full time, I prep for AWS certifications and get hands on inside my own AWS account. There are no guardrails, every mistake is mine to fix, and it's my own money on the line. That's exactly how I like it.</p>
+
+    <div class="seek">
+      <div>🎯 Seeking: <b>Cloud Engineer · Cloud Support Engineer · Cloud Support Associate</b></div>
+      <div class="sub">Due to graduate with a B.S. in Cloud Computing from Franklin University in Summer 2027.</div>
     </div>
 
-    <h3><strong>PROFESSIONAL SUMMARY</strong></h3>
+    <div class="grid-3">
+      <div class="stat"><div class="n">8+</div><div class="l">years of USAF leadership</div></div>
+      <div class="stat"><div class="n">18</div><div class="l">AI agents running in production</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">systems live on AWS</div></div>
+    </div>
+  </div>
+</section>
 
-    <p>Cloud Computing student at Franklin University with a minor in Artificial Intelligence and an active secret clearance. 
-        Experienced in Python and SQL with a focus on building cloud-based and backend solutions using AWS.</p>
-    <p>Proven leadership background from 8+ years in the U.S Air Force, with strong problem-solving skills, systems operations, and process optimization skills.
-        Currently developing hands-on experience in cloud infrastructure, API's, and automation with the goal of transitioning into a Cloud or Backend Engineering role.
-    </p>
+<section id="human">
+  <div class="wrap">
+    <div class="sec-label">02. the human side</div>
+    <h2>Off the clock</h2>
+    <div class="grid-2">
+      <div class="card mini-card">
+        <h4>📈 Markets nerd</h4>
+        <p>I built an AI board of directors to argue about stocks so I don't have to.</p>
+      </div>
+      <div class="card mini-card">
+        <h4>🎮 Gamer</h4>
+        <p>Fallout, Call of Duty, Minecraft, and the occasional Stardew Valley farm.</p>
+      </div>
+      <div class="card mini-card">
+        <h4>📖 New reader</h4>
+        <p>I just picked up reading as a hobby, starting with Tolstoy's The Death of Ivan Ilyich.</p>
+      </div>
+      <div class="card mini-card">
+        <h4>🌎 Traveler and grill master</h4>
+        <p>I've been to 15 countries and counting. When I'm home, you'll find me making Brazilian BBQ.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h3><strong>PROJECTS</strong></h3>
-    <h4><strong>Cloud Resume Challenge (In Progress)</strong></h4>
-    <ul>
-        <li>Deployed a secure static website using AWS S3, CloudFront, and ACM with HTTPS and custom domain configuration. Implemented Origin Access Control(OAC)to restrict
-            direct S3 access and ensure secure content delivery. Automated deployments using a CI/CD pipeline built with GitHub Actions and OIDC authentication, enabling
-            changes pushed to the main branch to automatically sync to S3 and invalidate the CloudFront cache, eliminating manual uploads entirely.</li>
-        <li>Designed and deployed a cloud-hosted resume using AWS services (S3, CloudFront, Lambda, DynamoDB)</li>
-        <li>Implemented backend visitor counter using serverless architecture</li>
-        <li>Configured IAM roles and policies for secure access control</li>
-    </ul>
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Kevin A. Welsh · Hermitage, PA</div>
+    <div class="foot-links">
+      <a href="https://github.com/Welsh-Kevin" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/welsh-kevin" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
 
-    <h3><strong>WORK EXPERIENCE</strong></h3>
-
-    <h4>
-        <strong>Technical Development & Cloud Training</strong>
-        <span class="date">May. 2025 - Present</span>
-    </h4>
-
-    <ul>
-        <li>Built cloud-based applications using AWS services including S3, IAM, and EC2</li>
-        <li>Developed backend scripts and applications using Python for data processing and automation</li>
-        <li>Designed and deployed cloud infrastructure as part of hands-on projects (Cloud Resume Challenge in progress)</li>
-    </ul>
-    <h4><strong>United States Air Force | Aug. 2016 - May. 2025</strong></h4>
-    <h5>Ramp Services Supervisor, Air Transportation <span class="date">Mar. 2023 - May. 2025</span></h5>
-    <ul>
-        <li>Managed large-scale operational systems at a high volume aerial port, coordinated global cargo workflows, and supported international missions.</li>
-        <li>Led and supervised 34 personnel, optimizing processes to move 45,000 tons of cargo annually.</li>
-        <li>Trained and developed teams on standardized procedures for cargo operations across commerical and military aircrafts.</li>
-        <li>Oversaw lifecyle management and utilization of 31 specialized vehicles values at $31M.</li>
-        <li>Monitored Global Air Transportation Execution System (GATES) & Global Decision Support System (GDSS) to track, manage, and optimize cargo movement.</li>
-    </ul>
-    <h5>Air Terminal Operations Supervisor, Air Transportation <span class="date">Feb. 2022 - Mar. 2023</span></h5>
-    <ul>
-        <li>Coordinated with international partners to align logistic systems, improving processing efficiencny by 21%.</li>
-        <li>Directed operations during a 340% surge in traffic, coordinating across 11 agencies in 29 countries to deliver 28,000 tons of aid.</li>
-    </ul>
-    <h5>Cargo Processing Supervisor, Air Transportation <span class="date">Apr. 2019 - Feb. 2022</span></h5>
-    <ul>
-        <li>Supervised 27 personnel in daily operations while developing training programs that improved team qualification rates by 35% across 19 operational tasks.</li>
-    </ul>
-    <h3><strong>EDUCATION</strong></h3>
-
-    <h4><strong>Franklin University | Aug. 2025 - Oct. 2027</strong></h4>
-    <p><i>B.S, Cloud Computing, Minor in Artificial Intelligence</i></p>
-    <h4><strong>Community College of the Air Force | 2017-2019</strong></h4>
-    <p><i>A.S, Transportation</i></p>
-    <h3><strong>CERTIFICATIONS & SKILLS</strong></h3>
-
-    <ul>
-        <li><h4><strong>Certifications:</strong></h4></li>
-        <p>AWS Certified Cloud Practitioner (CCP) | Amazon Web Services | 2026</p>
-
-        <li><h4><strong>Skills:</strong></h4></li>
-        <p>Python • SQL • Amazon Web Services (AWS) • Linux • Git • Debugging • Backend Development • Cloud Computing • Problem Solving</p>
-    </ul>
-    
+<script src="site.js"></script>
 </body>
 </html>

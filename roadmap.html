@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap — Kevin A. Welsh</title>
+<meta name="description" content="Kevin Welsh's certification and learning roadmap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">kevin<span>@</span>welsh:<span>~</span>$</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="roadmap.html" class="active">Roadmap</a>
+      <a href="blog.html">Blog</a>
+      <a href="resume.html">Resume</a>
+      <button class="btn-ai btn" type="button">✦ Ask my AI</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap page-head">
+  <div class="kicker">// roadmap</div>
+  <h1>Where I'm headed</h1>
+  <p class="page-sub">The plan I'm actually working, updated as things change. <span class="stamp" id="stamp"></span></p>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Kevin A. Welsh · Hermitage, PA</div>
+    <div class="foot-links">
+      <a href="https://github.com/Welsh-Kevin" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/welsh-kevin" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ================= EDIT YOUR ROADMAP HERE =================
+   Each item: when, title, note, and a type that sets the dot color:
+     "current"  = solid blue dot (what you're doing now)
+     "step"     = blue ring (upcoming step)
+     "event"    = purple ring (events like re:Invent)
+     "goal"     = green ring (big milestones)
+   Add, remove, or reorder items freely, update LAST_UPDATED, push. */
+
+const LAST_UPDATED = "July 2026";
+
+const ROADMAP = [
+  { when: "Now → Sept 2026", title: "AWS Solutions Architect Associate prep", note: "AWS SimuLearn labs plus KodeKloud labs on the side. Exam in September 2026.", type: "current" },
+  { when: "Sept – Nov 2026", title: "AWS CloudOps and AWS Security courses", note: "Franklin University coursework running alongside cert prep.", type: "step" },
+  { when: "Nov 2026", title: "AWS CloudOps certification", note: "Picking up Terraform knowledge along the way.", type: "step" },
+  { when: "Nov – Dec 2026", title: "AWS re:Invent, Las Vegas", note: "Say hi if you're there.", type: "event" },
+  { when: "Dec 2026 / Jan 2027", title: "Begin LFCS", note: "Going deeper on Linux fundamentals.", type: "step" },
+  { when: "Summer 2027", title: "B.S. Cloud Computing, graduation", note: "Franklin University.", type: "goal" },
+];
+/* ================= END EDITABLE SECTION ================= */
+
+document.getElementById("stamp").textContent = "Last updated: " + LAST_UPDATED;
+document.getElementById("timeline").innerHTML = ROADMAP.map(r => `
+  <div class="tl-item ${r.type === "current" ? "current" : r.type}">
+    <div class="tl-when">${r.when}</div>
+    <div class="tl-title">${r.title}</div>
+    <div class="tl-note">${r.note}</div>
+  </div>`).join("");
+</script>
+<script src="site.js"></script>
+</body>
+</html>
